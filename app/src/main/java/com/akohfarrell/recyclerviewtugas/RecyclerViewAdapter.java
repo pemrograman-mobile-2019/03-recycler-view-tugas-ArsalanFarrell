@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -32,7 +33,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
 
-        View contactView =inflater.inflate(R.layout.layout_listcontact, viewGroup, false);
+        View contactView = inflater.inflate(R.layout.layout_listcontact, viewGroup, false);
 
         // Return a new holder instance
         ViewHolder viewHolder = new ViewHolder(contactView);
@@ -41,20 +42,33 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        Glide.with(mContext);
+
+        Glide.with(mContext)
+                .asBitmap()
+                .load(mImages.get(i))
+                .into(viewHolder.image);
+
+        viewHolder.image_name.setText(mImageNames.get(i));
+
+        viewHolder.call_icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(mContext, "Calling", Toast.LENGTH_SHORT);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mImages.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        CircleImageView image;
-        TextView image_name;
-        ImageButton call_icon;
-        RecyclerView parentLayout;
+        public CircleImageView image;
+        public TextView image_name;
+        public ImageButton call_icon;
+        public RecyclerView parentLayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
