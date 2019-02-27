@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -17,12 +19,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private ArrayList<String> mImageNames = new ArrayList<>();
     private ArrayList<String> mImages = new ArrayList<>();
-    private Context mContect;
+    private Context mContext;
 
-    public RecyclerViewAdapter(ArrayList<String> mImageNames, ArrayList<String> mImages, Context mContect) {
+    public RecyclerViewAdapter(ArrayList<String> mImageNames, ArrayList<String> mImages, Context mContext) {
         this.mImageNames = mImageNames;
         this.mImages = mImages;
-        this.mContect = mContect;
+        this.mContext = mContext;
     }
 
     @NonNull
@@ -35,12 +37,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         // Return a new holder instance
         ViewHolder viewHolder = new ViewHolder(contactView);
         return viewHolder;
-        return null;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-
+        Glide.with(mContext);
     }
 
     @Override
