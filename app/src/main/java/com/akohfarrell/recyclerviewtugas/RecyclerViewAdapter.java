@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -52,10 +53,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         viewHolder.image_name.setText(mImageNames.get(i));
 
-        viewHolder.call_icon.setOnClickListener(new View.OnClickListener() {
+        ImageButton button = viewHolder.call_icon;
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "Calling", Toast.LENGTH_SHORT);
+                Toast.makeText(mContext, "Calling", Toast.LENGTH_SHORT).show();
             }
         });
     }

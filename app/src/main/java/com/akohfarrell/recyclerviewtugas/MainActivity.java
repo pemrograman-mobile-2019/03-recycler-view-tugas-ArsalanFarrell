@@ -31,9 +31,6 @@ public class MainActivity extends AppCompatActivity {
         mImageUrls.add("https://images.pexels.com/photos/1124724/pexels-photo-1124724.jpeg");
         mNames.add("Rachel Clementine");
 
-        mImageUrls.add("https://images.pexels.com/photos/789812/pexels-photo-789812.jpeg");
-        mNames.add("Angela Marc");
-
         mImageUrls.add("https://images.pexels.com/photos/756453/pexels-photo-756453.jpeg");
         mNames.add("Samantha Brown");
 

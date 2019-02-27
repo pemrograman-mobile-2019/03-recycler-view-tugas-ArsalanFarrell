@@ -26,10 +26,11 @@
         android:id="@+id/call_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
         android:background="@null"
-        android:src="@drawable/icons8_phone_filled_48"/>
+        android:src="@drawable/icons8_phone_filled_24" />
 
 </RelativeLayout>
