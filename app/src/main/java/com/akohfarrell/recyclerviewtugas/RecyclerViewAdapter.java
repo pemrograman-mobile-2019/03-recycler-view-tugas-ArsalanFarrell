@@ -31,8 +31,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
+        Context context = viewGroup.getContext();
+        LayoutInflater inflater = LayoutInflater.from(context);
 
+        // Inflate the custom layout
         View contactView = inflater.inflate(R.layout.layout_listcontact, viewGroup, false);
 
         // Return a new holder instance
@@ -68,7 +70,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public CircleImageView image;
         public TextView image_name;
         public ImageButton call_icon;
-        public RecyclerView parentLayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -76,7 +77,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             image = itemView.findViewById(R.id.image);
             image_name = itemView.findViewById(R.id.image_name);
             call_icon = itemView.findViewById(R.id.call_icon);
-            parentLayout = itemView.findViewById(R.id.parent_layout);
         }
     }
 }
